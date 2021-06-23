@@ -1,2 +1,5 @@
 secretkey.txt
 connection_string.txt
+venv/
+.idea/
+__pycache__/

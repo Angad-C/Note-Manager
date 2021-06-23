@@ -12,7 +12,7 @@ if connection_string == None:
 client = pymongo.MongoClient(connection_string)
 database = client["Note_Manager_Database"]
 collection = database["Note_Manager_Collection"]
-app = Flask("Note Manager")
+app = Flask(__name__)
 moment = Moment(app)
 secret_key = os.environ.get("SECRET_KEY")
 if secret_key == None:
@@ -29,7 +29,7 @@ def addnote():
         note = request.form["Add Note"]
         user_name = request.form["Name"]
         record = {"Note": note, "Name": user_name,
-                  "Post Time": datetime.datetime.now()}
+                  "Post Time": datetime.datetime.utcnow()}
         collection.insert_one(record)
         print(note)
         print(user_name)
@@ -48,5 +48,5 @@ def notes():
         all_documents.append(i)
     return render_template("notes.html", all_documents=all_documents, colors=colors)
 
-
-app.run(debug=True)
+if __name__ == "__main__":
+  app.run()

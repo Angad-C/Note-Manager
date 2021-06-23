@@ -1,0 +1,5 @@
+Flask
+pymongo
+flask_moment
+dns_python
+gunicorn
