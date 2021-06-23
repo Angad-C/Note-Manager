@@ -1,5 +1,5 @@
 Flask
 pymongo
 flask_moment
-dns_python
+dnspython
 gunicorn
