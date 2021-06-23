@@ -22,8 +22,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Note by {{i["Name"]}}</h5>
                     <p class="card-text">{{i["Note"]}}</p>
-                    <p class="card-text">{{i["Post Time"]}}</p>
-                    <p class="card-text">{{moment(i["Post Time"]).format("LLLL")}}</p>
+                    <p class="card-text">{{moment(i["Post Time"]).fromNow(refresh = True)}}</p>
                 </div>
             </div>
         </div>

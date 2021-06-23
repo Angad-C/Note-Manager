@@ -31,8 +31,6 @@ def addnote():
         record = {"Note": note, "Name": user_name,
                   "Post Time": datetime.datetime.utcnow()}
         collection.insert_one(record)
-        print(note)
-        print(user_name)
         flash("Your note has been recorded", "success")
         return redirect("/")
     else:
